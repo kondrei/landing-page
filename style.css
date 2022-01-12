@@ -4,13 +4,24 @@
     --dark-background: #1f2937;
     --foreground-color: #f9faf8;
     --button-color: #3882f6;
+    --quote-background: #e5e7eb;
+    --quote-text: #1f2937;
 }
 
 nav,
-.hero {
+.hero-section {
     background-color: var(--dark-background);
     color: var(--foreground-color);
     display: flex;
+    padding: 2rem;
+}
+
+.logo {
+    /* padding-top: 2rem; */
+    margin-left: 5rem;
+}
+
+.info-section {
     padding: 2rem;
 }
 
@@ -19,9 +30,21 @@ nav,
     margin-left: auto;
     list-style: none;
     gap: 1rem;
+    padding: 10px;
 }
 
-.hero {
+.menu>li {
+    padding: 10px;
+
+}
+
+.menu>li:hover {
+    background-color: var(--foreground-color);
+    color: var(--dark-background);
+    cursor: pointer;
+}
+
+.hero-section {
     justify-content: space-around;
     padding: 10rem;
 }
@@ -34,6 +57,12 @@ button {
     color: var(--foreground-color);
     flex: 0;
     align-self: flex-start;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--foreground-color);
+    color: var(--button-color);
 }
 
 .welcome {
@@ -41,19 +70,104 @@ button {
     flex-direction: column;
     justify-content: center;
     gap: 1.5rem;
-    flex-wrap: wrap;
+    flex-grow: 2;
+    flex-basis: 0;
 }
 
-.image {
-    /* max-width: 100%;
-    height: auto; */
-    flex: 50%;
+h2 {
+    text-align: center;
+    display: block;
+    flex: 0;
 }
 
-@media screen and (max-width: 700px) {
+.information {
+    display: flex;
+    gap: 2rem;
+    padding: 3rem;
+    justify-content: center;
+    align-content: center;
+}
+
+.thumb-img {
+    border: 2px solid var(--button-color);
+    border-radius: 10px;
+    transition: .5s ease-in-out;
+    margin: auto;
+    display: block;
+}
+
+.thumb-img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.thumb-txt {
+    text-align: center;
+    padding: 1rem;
+    color: var(--quote-text);
+    align-self: center;
+}
+
+.citation-section {
+    background-color: var(--quote-background);
+    text-align: center;
+    padding: 10rem 15rem;
+    color: var(--quote-text);
+    font-size: 36px;
+    font-style: italic;
+}
+
+.author {
+    text-align: right;
+    font-weight: bold;
+}
+
+.call-to-action-section {
+    padding: 5rem;
+    margin: 5rem;
+    background-color: var(--button-color);
+    color: var(--foreground-color);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.call-to-action-title {
+    font-size: 36px;
+    font-weight: bold;
+    flex: 3;
+}
+
+.call-to-action-text {
+    align-self: stretch;
+}
+
+.call-to-action-button {
+    margin-left: auto;
+}
+
+.call-button {
+    border-radius: 10px;
+    border: 2px solid var(--foreground-color);
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+}
+
+footer {
+    background-color: var(--dark-background);
+    color: var(--foreground-color);
+    text-align: center;
+    padding: 2rem;
+}
+
+@media screen and (max-width: 500px) {
 
     .hero,
-    .welcome {
+    .welcome0,
+    .information,
+    .call-to-action-section,
+    .hero-section {
         flex-direction: column;
+        align-items: center;
     }
 }
